@@ -32,4 +32,4 @@ Construir uma aplicação interativa aplicando conceitos essenciais do desenvolv
 
 1. **Clonar o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/gabimichachi/jogo_da_velha)
+   git clone (https://github.com/gabimichachi/jogo_da_velha)
