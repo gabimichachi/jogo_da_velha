@@ -1,0 +1,16 @@
+.square {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px solid var(--cor-borda);
+  background-color: var(--cor-quadrado);
+  color: var(--cor-texto);
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.square:hover {
+  background-color: var(--cor-hover);
+  transform: scale(1.03);
+}
