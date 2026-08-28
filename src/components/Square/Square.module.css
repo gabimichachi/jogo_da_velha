@@ -1,4 +1,4 @@
-.square {
+/* .square {
   width: 100%;
   aspect-ratio: 1;
   border: 2px solid var(--cor-borda);
@@ -13,4 +13,4 @@
 .square:hover {
   background-color: var(--cor-hover);
   transform: scale(1.03);
-}
+} */

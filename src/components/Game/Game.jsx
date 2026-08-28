@@ -7,6 +7,10 @@ function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
 
+  // Estados para salvar o nome digitado por cada jogador
+  const [playerX, setPlayerX] = useState("Jogador X");
+  const [playerO, setPlayerO] = useState("Jogador O");
+
   const [placar, setPlacar] = useState({
     x: 0,
     o: 0,
@@ -86,16 +90,19 @@ function Game() {
   function reiniciarJogo() {
     setSquares(Array(9).fill(null));
     setXIsNext(true);
+    setPlayerX("");
+    setPlayerO("");
   }
 
+  // Lógica de status usando o nome personalizado de cada jogador
   let status;
 
   if (winner) {
-    status = `Vencedor: ${winner}`;
+    status = `Vencedor: ${winner === "X" ? playerX : playerO}`;
   } else if (isDraw) {
     status = "Deu Velha!";
   } else {
-    status = `Próximo jogador: ${xIsNext ? "X" : "O"}`;
+    status = `Próximo jogador: ${xIsNext ? playerX : playerO}`;
   }
 
   return (
@@ -104,7 +111,29 @@ function Game() {
         <div className={styles.game__conteudo}>
           <h1 className={styles.game__titulo}>Jogo da Velha</h1>
 
-          <Placar placar={placar} />
+          {/* Campos para o usuário digitar o nome dos dois jogadores */}
+          <div className="row g-2 mb-3">
+            <div className="col-6">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nome do Jogador X"
+                value={playerX}
+                onChange={(e) => setPlayerX(e.target.value)}
+              />
+            </div>
+            <div className="col-6">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nome do Jogador O"
+                value={playerO}
+                onChange={(e) => setPlayerO(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <Placar placar={placar} playerX={playerX} playerO={playerO} />
 
           <p className={styles.game__status}>
             {status}
