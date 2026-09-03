@@ -1,16 +1,14 @@
-/* .square {
-  width: 100%;
+.square {
   aspect-ratio: 1;
-  border: 2px solid var(--cor-borda);
   background-color: var(--cor-quadrado);
-  color: var(--cor-texto);
+  border: 2px solid var(--cor-borda);
+  border-radius: 12px;
   font-size: 3rem;
   font-weight: bold;
+  color: var(--cor-texto);
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .square:hover {
   background-color: var(--cor-hover);
-  transform: scale(1.03);
-} */
+}

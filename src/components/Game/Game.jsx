@@ -7,7 +7,7 @@ function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
 
-  // Estados para salvar o nome digitado por cada jogador
+  // nomes dos jogadores
   const [playerX, setPlayerX] = useState("Jogador X");
   const [playerO, setPlayerO] = useState("Jogador O");
 
@@ -94,7 +94,6 @@ function Game() {
     setPlayerO("");
   }
 
-  // Lógica de status usando o nome personalizado de cada jogador
   let status;
 
   if (winner) {
@@ -109,31 +108,38 @@ function Game() {
     <main className={styles.game}>
       <div className="container">
         <div className={styles.game__conteudo}>
-          <h1 className={styles.game__titulo}>Jogo da Velha</h1>
+          <h1 className={styles.game__titulo}>
+            Jogo da Velha
+          </h1>
 
-          {/* Campos para o usuário digitar o nome dos dois jogadores */}
+          {/* nomes dos jogadores */}
           <div className="row g-2 mb-3">
             <div className="col-6">
               <input
                 type="text"
                 className="form-control"
-                placeholder="Nome do Jogador X"
+                placeholder="Jogador X"
                 value={playerX}
                 onChange={(e) => setPlayerX(e.target.value)}
               />
             </div>
+
             <div className="col-6">
               <input
                 type="text"
                 className="form-control"
-                placeholder="Nome do Jogador O"
+                placeholder="Jogador O"
                 value={playerO}
                 onChange={(e) => setPlayerO(e.target.value)}
               />
             </div>
           </div>
 
-          <Placar placar={placar} playerX={playerX} playerO={playerO} />
+          <Placar
+            placar={placar}
+            playerX={playerX}
+            playerO={playerO}
+          />
 
           <p className={styles.game__status}>
             {status}
@@ -150,6 +156,36 @@ function Game() {
           >
             Reiniciar Partida
           </button>
+
+          {/* tela de vitória ou empate */}
+          {(winner || isDraw) && (
+            <div className={styles.overlay}>
+              <div className={styles.resultado}>
+                <div className={styles.resultado__estrela}>
+                  {winner ? "(˶>⩊<˶)" : "٩(ˊᗜˋ*)و ♡"}
+                </div>
+
+                <h2>
+                  {winner
+                    ? "Você venceu!"
+                    : "Deu velha!"}
+                </h2>
+
+                <p>
+                  {winner
+                    ? `${winner === "X" ? playerX : playerO} ganhou a partida!`
+                    : "Ninguém ganhou dessa vez!"}
+                </p>
+
+                <button
+                  className={styles.resultado__botao}
+                  onClick={reiniciarJogo}
+                >
+                  Jogar novamente
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </main>
