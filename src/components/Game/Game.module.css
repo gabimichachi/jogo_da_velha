@@ -1,7 +1,18 @@
 .game {
   min-height: 100vh;
   padding: 3rem 1rem;
-  background-color: var(--cor-fundo);
+
+  background-color: #eef8ff;
+
+  background-image:
+    radial-gradient(circle, rgba(166, 211, 235, 0.45) 7px, transparent 8px),
+    radial-gradient(circle, rgba(190, 224, 241, 0.4) 5px, transparent 6px),
+    radial-gradient(circle, rgba(218, 237, 247, 0.7) 9px, transparent 10px);
+
+  background-size: 120px 120px, 180px 180px, 240px 240px;
+  background-position: 10px 20px, 80px 100px, 150px 40px;
+
+  color: #5d7180;
 }
 
 .game__conteudo {
@@ -11,144 +22,213 @@
 }
 
 .game__titulo {
-  margin-bottom: 1.5rem;
-  color: var(--cor-rosa-escuro);
-  font-family: "Fredoka", sans-serif;
-  font-size: 3rem;
-  font-weight: 600;
+  margin-bottom: 1rem;
+
+  color: #7aaac4;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 3.5rem;
+  font-weight: bold;
+
+  text-shadow: 3px 3px 0 #c7e3f1;
 }
 
-.game__status {
-  margin-bottom: 1.5rem;
-  color: var(--cor-texto);
-  font-family: "Poppins", sans-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
+.game__partida {
+  margin-bottom: 1rem;
 
-.game__botao {
-  margin-top: 2rem;
-  background-color: var(--cor-rosa);
-  border: none;
-  color: var(--cor-texto);
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  border-radius: 10px;
-  padding: 0.7rem 1.2rem;
-}
+  color: #718895;
 
-.game__botao:hover {
-  background-color: var(--cor-rosa-escuro);
-  color: #ffffff;
-}
-
-/* fundo escuro da tela de resultado */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(80, 60, 70, 0.55);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  z-index: 1000;
-  animation: aparecer 0.3s ease;
-}
-
-/* caixinha do resultado */
-.resultado {
-  width: 100%;
-  max-width: 400px;
-  padding: 2.5rem 2rem;
-  background-color: var(--cor-fundo);
-  border: 4px solid var(--cor-rosa);
-  border-radius: 25px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  animation: pular 0.5s ease;
-}
-
-/* estrelinha/coração */
-.resultado__estrela {
-  color: var(--cor-rosa-escuro);
-  font-size: 4rem;
-  line-height: 1;
-  animation: girar 0.8s ease;
-}
-
-.resultado h2 {
-  margin-top: 1rem;
-  color: var(--cor-rosa-escuro);
-  font-family: "Fredoka", sans-serif;
-  font-size: 2.2rem;
-  font-weight: 600;
-}
-
-.resultado p {
-  margin: 1rem 0 1.5rem;
-  color: var(--cor-texto);
-  font-family: "Poppins", sans-serif;
+  font-family: monospace;
   font-size: 1rem;
 }
 
-/* botão da tela de resultado */
+.game__status {
+  width: fit-content;
+
+  margin: 1.5rem auto;
+  padding: 0.8rem 1.2rem;
+
+  border: 3px solid #a9cee2;
+  border-radius: 8px;
+
+  background-color: #f7fcff;
+
+  box-shadow: 4px 4px 0 #c3dfea;
+
+  font-family: monospace;
+}
+
+/* tela de configuração */
+
+.configuracao {
+  margin-top: 2rem;
+  padding: 2rem;
+
+  border: 4px solid #a9cee2;
+  border-radius: 10px;
+
+  background-color: #e5f3fa;
+
+  box-shadow:
+    6px 6px 0 #b8d8e8,
+    0 8px 20px rgba(108, 160, 185, 0.15);
+}
+
+.configuracao h2 {
+  margin-bottom: 1.5rem;
+
+  color: #78a8c1;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 2.3rem;
+}
+
+.configuracao input {
+  border: 3px solid #b5d5e5;
+  border-radius: 6px;
+
+  background-color: #fafdff;
+  color: #5d7180;
+
+  font-family: monospace;
+}
+
+.configuracao input:focus {
+  border-color: #8ebbd3;
+
+  box-shadow: 0 0 0 3px rgba(142, 187, 211, 0.18);
+
+  background-color: #fafdff;
+  color: #5d7180;
+}
+
+.configuracao input::placeholder {
+  color: #9aafb9;
+}
+
+.configuracao label {
+  color: #5d7180;
+
+  font-family: monospace;
+}
+
+/* botão */
+
+.game__botao {
+  margin-top: 1rem;
+  padding: 0.7rem 1.8rem;
+
+  border: 3px solid #82aec5;
+  border-radius: 7px;
+
+  background-color: #c7e3f1;
+  color: #587487;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 1.3rem;
+  font-weight: bold;
+
+  box-shadow: 4px 4px 0 #9fc5d9;
+
+  transition: 0.15s;
+}
+
+.game__botao:hover {
+  background-color: #b5d9eb;
+
+  transform: translate(2px, 2px);
+
+  box-shadow: 2px 2px 0 #9fc5d9;
+}
+
+/* tela de resultado */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  background-color: rgba(76, 112, 128, 0.6);
+}
+
+.resultado {
+  width: 100%;
+  max-width: 430px;
+
+  padding: 2rem;
+
+  border: 4px solid #a9cee2;
+  border-radius: 10px;
+
+  background-color: #e5f3fa;
+
+  box-shadow:
+    7px 7px 0 #8fb8ce,
+    0 10px 25px rgba(76, 112, 128, 0.25);
+
+  text-align: center;
+}
+
+.resultado__estrela {
+  margin-bottom: 1rem;
+
+  color: #a9d2e7;
+
+  font-size: 2.8rem;
+
+  text-shadow: 3px 3px 0 #83aec5;
+}
+
+.resultado h2 {
+  margin-bottom: 1rem;
+
+  color: #78a8c1;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 2.4rem;
+}
+
+.resultado p {
+  color: #5d7180;
+
+  font-family: monospace;
+}
+
+.resultado strong {
+  color: #6f9fba;
+}
+
 .resultado__botao {
-  border: none;
-  border-radius: 12px;
-  padding: 0.8rem 1.5rem;
-  background-color: var(--cor-rosa);
-  color: var(--cor-texto);
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+
+  border: 3px solid #82aec5;
+  border-radius: 7px;
+
+  background-color: #c7e3f1;
+  color: #587487;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  box-shadow: 4px 4px 0 #9fc5d9;
+
   cursor: pointer;
-  transition: 0.2s;
+
+  transition: 0.15s;
 }
 
 .resultado__botao:hover {
-  background-color: var(--cor-rosa-escuro);
-  color: #ffffff;
-  transform: scale(1.05);
+  background-color: #b5d9eb;
+
+  transform: translate(2px, 2px);
+
+  box-shadow: 2px 2px 0 #9fc5d9;
 }
-
-/* animação da tela */
-@keyframes aparecer {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-/* animação da caixinha */
-@keyframes pular {
-  0% {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-
-  70% {
-    transform: scale(1.05);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* animação do símbolo */
-@keyframes girar {
-  0% {
-    transform: rotate(-20deg) scale(0);
-  }
-
-  70% {
-    transform: rotate(10deg) scale(1.2);
-  }
-
-  100% {
-    transform: rotate(0) scale(1);
-  }
-} 

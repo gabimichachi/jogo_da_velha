@@ -1,50 +1,100 @@
+/* estilo do placar */
 .placar {
+  /* ocupa toda a largura disponível */
   width: 100%;
+
+  /* limita o tamanho do placar */
   max-width: 600px;
+
+  /* centraliza o placar */
   margin: 0 auto 2rem;
 }
 
+/* título do placar */
 .placar__titulo {
+  /* espaço abaixo do título */
   margin-bottom: 1rem;
+
+  /* cor do título */
   color: var(--cor-rosa-escuro);
+
+  /* fonte do título */
   font-family: "Fredoka", sans-serif;
+
+  /* tamanho do título */
   font-size: 1.8rem;
+
+  /* deixa a fonte mais fina */
   font-weight: 500;
+
+  /* centraliza o texto */
   text-align: center;
 }
 
+/* organiza os itens do placar */
 .placar__itens {
+  /* coloca os itens lado a lado */
   display: flex;
+
+  /* centraliza os itens */
   justify-content: center;
+
+  /* espaço entre os itens */
   gap: 1rem;
 }
 
+/* estilo de cada item */
 .placar__item {
+  /* divide o espaço igualmente */
   flex: 1;
+
+  /* espaço interno */
   padding: 1rem;
+
+  /* centraliza o texto */
   text-align: center;
+
+  /* cor do fundo */
   background-color: var(--cor-quadrado);
+
+  /* borda */
   border: 2px solid var(--cor-borda);
+
+  /* deixa as bordas arredondadas */
   border-radius: 12px;
+
+  /* fonte do texto */
   font-family: "Poppins", sans-serif;
 }
 
+/* estilo da pontuação */
 .placar__item strong {
+  /* coloca a pontuação em outra linha */
   display: block;
+
+  /* cor da pontuação */
   color: var(--cor-texto);
+
+  /* fonte da pontuação */
   font-family: "Fredoka", sans-serif;
+
+  /* tamanho da pontuação */
   font-size: 2rem;
 }
 
+/* ajusta o placar em telas pequenas */
 @media (max-width: 500px) {
+  /* diminui o espaço entre os itens */
   .placar__itens {
     gap: 0.5rem;
   }
 
+  /* diminui o espaço interno */
   .placar__item {
     padding: 0.8rem 0.5rem;
   }
 
+  /* diminui o tamanho da pontuação */
   .placar__item strong {
     font-size: 1.6rem;
   }

@@ -1,18 +1,23 @@
+/* cores do projeto */
 :root {
-  --cor-fundo: #fff8f5;
-  --cor-quadrado: #fff0f3;
-  --cor-hover: #ffe1e8;
+  --cor-fundo: #eef8ff;
+  --cor-quadrado: #f7fcff;
+  --cor-hover: #e0f1fa;
 
-  --cor-rosa: #f6b6c8;
-  --cor-rosa-escuro: #d98fa6;
+  --cor-azul: #c7e3f1;
+  --cor-azul-claro: #d9edf7;
+  --cor-azul-escuro: #7aaac4;
 
-  --cor-amarelo: #f9e6a8;
-  --cor-amarelo-escuro: #e5c96b;
+  --cor-borda: #a9cee2;
+  --cor-sombra: #9fc5d9;
 
-  --cor-texto: #5c4b51;
-  --cor-borda: #e7b7c5;
+  --cor-texto: #5d7180;
+  --cor-texto-claro: #718895;
+
+  --cor-destaque: #b5d9eb;
 }
 
+/* estilo geral da página */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;

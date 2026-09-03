@@ -1,14 +1,44 @@
 .square {
   aspect-ratio: 1;
+
+  border: none;
+  border-radius: 6px;
+
   background-color: var(--cor-quadrado);
-  border: 2px solid var(--cor-borda);
-  border-radius: 12px;
+  color: var(--cor-texto);
+
+  font-family: monospace;
   font-size: 3rem;
   font-weight: bold;
-  color: var(--cor-texto);
+
   cursor: pointer;
+
+  outline: none;
+  box-shadow: none;
+
+  transition: 0.12s;
 }
 
 .square:hover {
   background-color: var(--cor-hover);
+
+  border: none;
+
+  transform: translate(2px, 2px);
+
+  outline: none;
+  box-shadow: none;
+}
+
+.square:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.square:active {
+  transform: translate(2px, 2px);
+
+  border: none;
+  box-shadow: none;
 }
