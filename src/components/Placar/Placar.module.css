@@ -24,8 +24,8 @@
   /* tamanho do título */
   font-size: 1.8rem;
 
-  /* deixa a fonte mais fina */
-  font-weight: 500;
+  /* deixa a fonte mais grossa */
+  font-weight: 700;
 
   /* centraliza o texto */
   text-align: center;
@@ -84,6 +84,7 @@
 
 /* ajusta o placar em telas pequenas */
 @media (max-width: 500px) {
+
   /* diminui o espaço entre os itens */
   .placar__itens {
     gap: 0.5rem;

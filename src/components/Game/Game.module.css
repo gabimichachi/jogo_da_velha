@@ -134,11 +134,20 @@
 }
 
 .game__botao:hover {
+  border-color: #a9c9d9;
   background-color: #b5d9eb;
 
   transform: translate(2px, 2px);
 
   box-shadow: 2px 2px 0 #9fc5d9;
+}
+
+.game__botao:active {
+  background-color: #cfe3ee !important;
+  border-color: #82aec5 !important;
+  color: #ffffff !important;
+  box-shadow: 1px 1px 0 #b7cfdb !important;
+  transform: translate(1px, 1px);
 }
 
 /* tela de resultado */
