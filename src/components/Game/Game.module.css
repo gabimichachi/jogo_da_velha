@@ -16,6 +16,9 @@
 }
 
 .game__conteudo {
+  position: relative;
+  z-index: 1;
+
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
@@ -23,14 +26,14 @@
 
 .game__titulo {
   margin-bottom: 1rem;
-
   color: #7aaac4;
-
   font-family: "Indie Flower", cursive;
   font-size: 3.5rem;
   font-weight: bold;
 
-  text-shadow: 3px 3px 0 #c7e3f1;
+  text-shadow:
+    3px 3px 0 #c7e3f1,
+    5px 5px 0 #a9cee2;
 }
 
 .game__partida {
@@ -65,13 +68,13 @@
   padding: 2rem;
 
   border: 4px solid #a9cee2;
-  border-radius: 10px;
+  border-radius: 6px;
 
   background-color: #e5f3fa;
 
   box-shadow:
     6px 6px 0 #b8d8e8,
-    0 8px 20px rgba(108, 160, 185, 0.15);
+    10px 10px 0 rgba(169, 206, 226, 0.25);
 }
 
 .configuracao h2 {
@@ -119,7 +122,7 @@
   padding: 0.7rem 1.8rem;
 
   border: 3px solid #82aec5;
-  border-radius: 7px;
+  border-radius: 4px;
 
   background-color: #c7e3f1;
   color: #587487;
@@ -128,26 +131,32 @@
   font-size: 1.3rem;
   font-weight: bold;
 
-  box-shadow: 4px 4px 0 #9fc5d9;
+  box-shadow:
+    4px 4px 0 #9fc5d9,
+    7px 7px 0 #d8eaf3;
 
-  transition: 0.15s;
+  transition: 0.1s;
 }
 
 .game__botao:hover {
-  border-color: #a9c9d9;
-  background-color: #b5d9eb;
+  border-color: #9fc5d9;
+  background-color: #d4e9f4;
 
-  transform: translate(2px, 2px);
+  transform: translate(1px, 1px);
 
-  box-shadow: 2px 2px 0 #9fc5d9;
+  box-shadow:
+    3px 3px 0 #9fc5d9,
+    5px 5px 0 #d8eaf3;
 }
 
 .game__botao:active {
   background-color: #cfe3ee !important;
   border-color: #82aec5 !important;
-  color: #ffffff !important;
-  box-shadow: 1px 1px 0 #b7cfdb !important;
-  transform: translate(1px, 1px);
+  color: #587487 !important;
+
+  transform: translate(4px, 4px);
+
+  box-shadow: none !important;
 }
 
 /* tela de resultado */
@@ -240,4 +249,46 @@
   transform: translate(2px, 2px);
 
   box-shadow: 2px 2px 0 #9fc5d9;
+}
+
+/* decoração pixel art do fundo */
+
+.decoracoes {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.pixelX,
+.pixelO {
+  position: absolute;
+  font-family: monospace;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #9fc9df;
+  opacity: 0.18;
+}
+
+.pixelX:nth-child(1) {
+  top: 12%;
+  left: 8%;
+  transform: rotate(-10deg);
+}
+
+.pixelO:nth-child(2) {
+  top: 18%;
+  right: 10%;
+}
+
+.pixelX:nth-child(3) {
+  top: 55%;
+  left: 12%;
+  transform: rotate(8deg);
+}
+
+.pixelO:nth-child(4) {
+  top: 65%;
+  right: 13%;
 }

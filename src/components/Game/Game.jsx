@@ -215,6 +215,14 @@ function Game() {
 
   return (
     <main className={styles.game}>
+
+      <div className={styles.decoracoes}>
+        <span className={styles.pixelX}>X</span>
+        <span className={styles.pixelO}>O</span>
+        <span className={styles.pixelX}>X</span>
+        <span className={styles.pixelO}>O</span>
+      </div>
+
       <div className="container">
         <div className={styles.game__conteudo}>
 
