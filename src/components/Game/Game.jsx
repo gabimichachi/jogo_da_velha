@@ -202,15 +202,13 @@ function Game() {
   } else if (jogoFinalizado) {
     status = "Jogo encerrado!";
   } else if (winner) {
-    status = `Vencedor(a) da partida: ${
-      winner === "X" ? playerX : playerO
-    }`;
+    status = `Vencedor(a) da partida: ${winner === "X" ? playerX : playerO
+      }`;
   } else if (isDraw) {
     status = "Deu Velha!";
   } else {
-    status = `Próximo(a) jogador(a): ${
-      xIsNext ? playerX : playerO
-    }`;
+    status = `Próximo(a) jogador(a): ${xIsNext ? playerX : playerO
+      }`;
   }
 
   return (
@@ -235,7 +233,7 @@ function Game() {
             <div className={styles.configuracao}>
 
               <h2>
-               Preparem-se para jogar!
+                Preparem-se para jogar!
               </h2>
 
               <div className="row g-2 mb-3">
@@ -276,12 +274,12 @@ function Game() {
                   type="number"
                   className="form-control"
                   min="1"
-                  max="99"
+                  max="10"
                   value={totalPartidas}
                   onChange={(e) => {
                     const valor = Number(e.target.value);
 
-                    if (valor >= 1 && valor <= 99) {
+                    if (valor >= 1 && valor <= 10) {
                       setTotalPartidas(valor);
                     }
                   }}
@@ -348,11 +346,10 @@ function Game() {
 
                     <p>
                       {winner
-                        ? `${
-                            winner === "X"
-                              ? playerX
-                              : playerO
-                          } ganhou a partida!`
+                        ? `${winner === "X"
+                          ? playerX
+                          : playerO
+                        } ganhou a partida!`
                         : "Ninguém ganhou essa partida!"}
                     </p>
 
