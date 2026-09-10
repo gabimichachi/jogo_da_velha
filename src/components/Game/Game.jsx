@@ -250,7 +250,7 @@ function Game() {
       <div className="container">
         <div className={styles.game__conteudo}>
           <h1 className={styles.game__titulo}>
-            Jogo da Velha
+            Jogo da Velha 
           </h1>
 
           {/* tela inicial */}
