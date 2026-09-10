@@ -62,7 +62,36 @@ function Game() {
     return null;
   };
 
+  // encontra os 3 quadrados da vitória
+  const calculateWinningLine = (squares) => {
+    const linhas = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    for (const [a, b, c] of linhas) {
+      if (
+        squares[a] &&
+        squares[a] === squares[b] &&
+        squares[a] === squares[c]
+      ) {
+        return [a, b, c];
+      }
+    }
+
+    return [];
+  };
+
   const winner = calculateWinner(squares);
+
+  // pega os quadrados vencedores
+  const winningLine = calculateWinningLine(squares);
 
   // verifica se deu velha
   const isDraw =
@@ -98,7 +127,6 @@ function Game() {
     }
 
     const nextSquares = [...squares];
-
     nextSquares[index] = xIsNext ? "X" : "O";
 
     const nextWinner = calculateWinner(nextSquares);
@@ -119,9 +147,7 @@ function Game() {
       };
 
       setPlacar(novoPlacar);
-    }
-
-    else if (nextWinner === "O") {
+    } else if (nextWinner === "O") {
       novoPlacar = {
         ...placar,
         o: placar.o + 1,
@@ -143,7 +169,6 @@ function Game() {
     // verifica se acabou
     if (nextWinner || nextIsDraw) {
       if (partidaAtual === totalPartidas) {
-
         // define o vencedor final
         if (novoPlacar.x > novoPlacar.o) {
           setVencedorFinal("X");
@@ -202,18 +227,19 @@ function Game() {
   } else if (jogoFinalizado) {
     status = "Jogo encerrado!";
   } else if (winner) {
-    status = `Vencedor(a) da partida: ${winner === "X" ? playerX : playerO
-      }`;
+    status = `Vencedor(a) da partida: ${
+      winner === "X" ? playerX : playerO
+    }`;
   } else if (isDraw) {
     status = "Deu Velha!";
   } else {
-    status = `Próximo(a) jogador(a): ${xIsNext ? playerX : playerO
-      }`;
+    status = `Próximo(a) jogador(a): ${
+      xIsNext ? playerX : playerO
+    }`;
   }
 
   return (
     <main className={styles.game}>
-
       <div className={styles.decoracoes}>
         <span className={styles.pixelX}>X</span>
         <span className={styles.pixelO}>O</span>
@@ -223,7 +249,6 @@ function Game() {
 
       <div className="container">
         <div className={styles.game__conteudo}>
-
           <h1 className={styles.game__titulo}>
             Jogo da Velha
           </h1>
@@ -231,13 +256,9 @@ function Game() {
           {/* tela inicial */}
           {!jogoIniciado && (
             <div className={styles.configuracao}>
-
-              <h2>
-                Preparem-se para jogar!
-              </h2>
+              <h2>Preparem-se para jogar!</h2>
 
               <div className="row g-2 mb-3">
-
                 <div className="col-6">
                   <input
                     type="text"
@@ -257,11 +278,9 @@ function Game() {
                     onChange={(e) => setPlayerO(e.target.value)}
                   />
                 </div>
-
               </div>
 
               <div className="mb-3">
-
                 <label
                   htmlFor="totalPartidas"
                   className="form-label"
@@ -284,7 +303,6 @@ function Game() {
                     }
                   }}
                 />
-
               </div>
 
               <button
@@ -293,7 +311,6 @@ function Game() {
               >
                 Iniciar jogo
               </button>
-
             </div>
           )}
 
@@ -317,6 +334,7 @@ function Game() {
               <Board
                 squares={squares}
                 onSquareClick={handleClick}
+                winningLine={winningLine}
               />
 
               {/* botão de reiniciar */}
@@ -331,7 +349,6 @@ function Game() {
               {(winner || isDraw) && !jogoFinalizado && (
                 <div className={styles.overlay}>
                   <div className={styles.resultado}>
-
                     <div className={styles.resultado__estrela}>
                       {winner
                         ? "ദ്ദി◝ ⩊ ◜.ᐟ"
@@ -346,10 +363,11 @@ function Game() {
 
                     <p>
                       {winner
-                        ? `${winner === "X"
-                          ? playerX
-                          : playerO
-                        } ganhou a partida!`
+                        ? `${
+                            winner === "X"
+                              ? playerX
+                              : playerO
+                          } ganhou a partida!`
                         : "Ninguém ganhou essa partida!"}
                     </p>
 
@@ -363,7 +381,6 @@ function Game() {
                     >
                       Próxima partida
                     </button>
-
                   </div>
                 </div>
               )}
@@ -372,7 +389,6 @@ function Game() {
               {jogoFinalizado && (
                 <div className={styles.overlay}>
                   <div className={styles.resultado}>
-
                     <div className={styles.resultado__estrela}>
                       {vencedorFinal === "EMPATE"
                         ? "(｡•́︿•̀｡)"
@@ -422,14 +438,11 @@ function Game() {
                     >
                       Jogar novamente
                     </button>
-
                   </div>
                 </div>
               )}
-
             </>
           )}
-
         </div>
       </div>
     </main>

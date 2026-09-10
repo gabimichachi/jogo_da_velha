@@ -1,18 +1,18 @@
 import styles from "./Square.module.css";
 
 // cria o quadrado
-function Square({ value, onClick }) {
+function Square({ value, onClick, isWinner }) {
   return (
     <button
       className={`${styles.square} ${
-        value === "X"
-          ? styles.squareX
-          : value === "O"
-          ? styles.squareO
-          : ""
+        isWinner ? styles.squareWinner : ""
       }`}
       onClick={onClick}
-      aria-label={value ? `Posição marcada com ${value}` : "Posição vazia"}
+      aria-label={
+        value
+          ? `Posição marcada com ${value}`
+          : "Posição vazia"
+      }
     >
       {value}
     </button>

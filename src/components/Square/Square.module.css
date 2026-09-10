@@ -1,40 +1,45 @@
 .square {
-    aspect-ratio: 1;
+  aspect-ratio: 1;
+  border: 2px solid #d5e9f3;
+  border-radius: 12px;
+  background-color: #f7fcff;
+  color: #6f8fa1;
+  font-family: "Indie Flower", cursive;
+  font-size: 3rem;
+  font-weight: normal;
+  cursor: pointer;
+  outline: none;
 
-    border: 2px solid #c6ddea;
-    border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(120, 170, 195, 0.12);
 
-    background-color: var(--cor-quadrado);
-    color: var(--cor-texto);
-
-    font-family: monospace;
-    font-size: 3rem;
-    font-weight: bold;
-
-    cursor: pointer;
-    outline: none;
-
-    box-shadow: 0 2px 5px rgba(90, 140, 170, 0.12);
-
-    transition: 0.12s;
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .square:hover {
-    background-color: var(--cor-hover);
-    border-color: #aacbdc;
+  background-color: #eaf6fc;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(120, 170, 195, 0.18);
+}
 
-    transform: translate(2px, 2px);
+/* destaca os 3 quadrados vencedores */
+.squareWinner {
+  background-color: #c7e3f1;
+  border-color: #a9cee2;
+  box-shadow:
+    0 0 0 3px #d8edf7,
+    0 5px 12px rgba(120, 170, 195, 0.25);
 
-    outline: none;
-    box-shadow: 0 1px 3px rgba(90, 140, 170, 0.15);
+  transform: scale(1.03);
+}
+
+.squareWinner:hover {
+  background-color: #c7e3f1;
+  transform: scale(1.03);
 }
 
 .square:focus {
-    outline: none;
-    border-color: #c6ddea;
-}
-
-.square:active {
-    transform: translate(2px, 2px);
-    border-color: #aacbdc;
+  outline: none;
 }
